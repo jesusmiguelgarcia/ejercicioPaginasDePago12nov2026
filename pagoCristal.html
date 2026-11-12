@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sendara - Productos</title>
+    <style>
+        body{
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: rgb(126, 186, 188);
+        }
+        .producto{
+            background-color: cornsilk;
+            padding: 25px;
+            max-width: 350px;
+            border-radius: 10px;
+            margin: auto;
+        }
+        .precio{
+            font-weight: bold;
+            color: red;
+            font-size: 25px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Sendara</h1>
+    <div class="producto">
+        <img src="calcetines.jpg" alt="Calcetines" width="300px">
+        <h3>Calcetines térmicos</h3>
+        <p>2 pares de calcetines térmicos para senderismo</p>
+        <p class="precio">$125 MXN</p>
+        <h3>Realizar pago</h3>
+        <div id="paypal-button"></div>
+        <p id="resultado"></p>
+
+        <script
+            src="https://www.paypal.com/sdk/js?client-id=BAA4WxDHA0xCJHLkTgjMGVMeGb5Q_9j0gdkbX-wP2tUp0CI9rYJ8ZnQQ_j60e9hGdbPXspOGFdmwgUZevY&currency=MXN&intent=capture">
+            </script>
+
+        <script>
+            paypal.Buttons({
+                createOrder: function (data, actions) {
+                    return actions.order.create({
+                        purchase_units: [{
+                            description: "Calcetines superpros",
+                            amount: {
+                                currency_code: "MXN",
+                                value: "125.00"
+                            }
+                        }]
+                    });
+                },
+                onApprove: function (data, actions) {
+                    return actions.order.capture().then(function (details) {
+                        document.getElementById("resultado").innerHTML =
+                            "¡Compra realizada exitosamente!<br>" +
+                            "Comprador: " + details.payer.name.given_name +
+                            "<br>Orden: " + data.orderID;
+                    });
+                },
+                onError: function (error) {
+                    console.error(error);
+                    document.getElementById("resultado").innerHTML =
+                        "Ocurrió un error al procesar el pago.";
+                }
+            }).render("#paypal-button");
+
+        </script>
+    </div>
+</body>
+
+</html>
