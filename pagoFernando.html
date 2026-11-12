@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Juegos de mesa</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #706060;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        color: white;
+      }
+
+      .imagen-producto {
+        width: 200px;
+        height: auto;
+      }
+
+      .tarjeta-producto {
+        background-color: #470808;
+        width: 300px;
+        height: 600px;
+        border: 1px solid #ccc;
+        padding: 10px;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+        margin: 20px auto;
+        text-align: center;
+        color: white;
+      }
+
+      .contenedor-productos {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        align-content: center;
+      }
+
+      button {
+        background-color: #4caf50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Juegos de mesa</h1>
+    <p>Bienvenido a nuestra colección de juegos de mesa.</p>
+
+    <div class="contenedor-productos">
+      <div class="tarjeta-producto">
+        <h3>Miniatura 1</h3>
+        <p>Descripción de la miniatura 1.</p>
+        <p>Precio: <strong>$19.99</strong></p>
+        <img
+          class="imagen-producto"
+          src="miniaturas-aventureros.jpg"
+          alt="Miniatura de Aventureros"
+        />
+        <h3>Realizar pago</h3>
+        <div id="paypal-button"></div>
+
+        <p id="resultado"></p>
+
+        <script src="https://www.paypal.com/sdk/js?client-id=BAAmcWQqcPjoyJs2pNbQkwWc4I2LEncZEqAytpLd-9E40g1O01a_vWy2VKd4jqooIDD3US5SBYXneZCju4&currency=MXN&intent=capture"></script>
+
+        <script>
+          paypal
+            .Buttons({
+              createOrder: (data, actions) => {
+                return actions.order.create({
+                  purchase_units: [
+                    {
+                      description: "Miniatura 1",
+                      amount: {
+                        currency_code: "MXN",
+                        value: "19.99",
+                      },
+                    },
+                  ],
+                });
+              },
+              onApprove: (data, actions) => {
+                return actions.order.capture().then(function (details) {
+                  document.getElementById("resultado").innerHTML =
+                    "¡Compra realizada exitosamente!<br>" +
+                    "Comprador: " +
+                    details.payer.name.given_name +
+                    "<br>Orden: " +
+                    data.orderID;
+                });
+              },
+
+              onError: (error) => {
+                console.error(error);
+
+                document.getElementById("resultado").innerHTML =
+                  "Ocurrió un error al procesar el pago.";
+              },
+            })
+            .render("#paypal-button");
+        </script>
+      </div>
+    </div>
+  </body>
+</html>
