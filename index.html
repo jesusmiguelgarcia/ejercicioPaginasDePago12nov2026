@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Directorio de pagos | Sistemas de Comercio Electrónico</title>
-  <style>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Directorio de pagos | Sistemas de Comercio Electrónico</title>
+    <style>
     :root {
       --navy: #12304a;
       --blue: #1769aa;
@@ -112,46 +112,112 @@
       .search { width: 100%; }
     }
   </style>
-</head>
-<body>
-  <header>
-    <div class="header-inner">
-      <p class="eyebrow">Universidad de la Sierra · Ingeniería en Sistemas Computacionales</p>
-      <h1>Directorio de páginas de pago</h1>
-      <p class="subtitle">Sistemas de Comercio Electrónico<br>Selecciona tu nombre para acceder a tu página de pago.</p>
-    </div>
-  </header>
+  </head>
+  <body>
+    <header>
+      <div class="header-inner">
+        <p class="eyebrow">Universidad de la Sierra · Ingeniería en Sistemas
+          Computacionales</p>
+        <h1>Directorio de páginas de pago</h1>
+        <p class="subtitle">Sistemas de Comercio Electrónico<br>Selecciona tu
+          nombre para acceder a tu página de pago.</p>
+      </div>
+    </header>
 
-  <main>
-    <div class="toolbar">
-      <div class="count" id="count">12 alumnos</div>
-      <input class="search" id="search" type="search" placeholder="Buscar alumno..." aria-label="Buscar alumno">
-    </div>
-    <section class="grid" id="students" aria-label="Alumnos">
-      <!--
+    <main>
+      <div class="toolbar">
+        <div class="count" id="count">12 alumnos</div>
+        <input class="search" id="search" type="search"
+          placeholder="Buscar alumno..." aria-label="Buscar alumno">
+      </div>
+      <section class="grid" id="students" aria-label="Alumnos">
+        <!--
         Para agregar cada URL, reemplaza href="#" por la dirección completa.
         Ejemplo: href="https://mi-tienda.vercel.app/pagos"
       -->
-      <article class="student"><div class="student-info"><div class="student-name">AQUINO RIVERA JOSE FRANCISCO</div><div class="student-label">Página de pago</div></div><a class="pay-link disabled" href="#" aria-disabled="true">Enlace pendiente</a></article>
-      <article class="student"><div class="student-info"><div class="student-name">Alvaro Arriaga</div><div class="student-label">Página de pago</div></div><a class="pay-link disabled" href="#" aria-disabled="true">Enlace pendiente</a></article>
-      <article class="student"><div class="student-info"><div class="student-name">ARVAYO COTA CRISTAL ALEJANDRA</div><div class="student-label">Página de pago</div></div><a class="pay-link disabled" href="#" aria-disabled="true">Enlace pendiente</a></article>
-      <article class="student"><div class="student-info"><div class="student-name">Yael Balandran</div><div class="student-label">Página de pago</div></div><a class="pay-link disabled" href="#" aria-disabled="true">Enlace pendiente</a></article>
-      <article class="student"><div class="student-info"><div class="student-name">BUELNA ESPINOZA JOSE FERNANDO</div><div class="student-label">Página de pago</div></div><a class="pay-link disabled" href="#" aria-disabled="true">Enlace pendiente</a></article>
-      <article class="student"><div class="student-info"><div class="student-name">CORDOVA CISCOMANI DIEGO EMILIO</div><div class="student-label">Página de pago</div></div><a class="pay-link disabled" href="#" aria-disabled="true">Enlace pendiente</a></article>
-      <article class="student"><div class="student-info"><div class="student-name">GALVAN MOLINERO ARTURO DE JESUS</div><div class="student-label">Página de pago</div></div><a class="pay-link disabled" href="#" aria-disabled="true">Enlace pendiente</a></article>
-      <article class="student"><div class="student-info"><div class="student-name">GONZALEZ HOYOS ARTURO EDUARDO</div><div class="student-label">Página de pago</div></div><a class="pay-link disabled" href="zyron-store.html" aria-disabled="true">Enlace pendiente</a></article>
-      <article class="student"><div class="student-info"><div class="student-name">Fabian Juarez</div><div class="student-label">Página de pago</div></div><a class="pay-link disabled" href="#" aria-disabled="true">Enlace pendiente</a></article>
-      <article class="student"><div class="student-info"><div class="student-name">MORENO DURAZO JOSE MANUEL</div><div class="student-label">Página de pago</div></div><a class="pay-link disabled" href="#" aria-disabled="true">Enlace pendiente</a></article>
-      <article class="student"><div class="student-info"><div class="student-name">Guillermo Valencia</div><div class="student-label">Página de pago</div></div><a class="pay-link disabled" href="#" aria-disabled="true">Enlace pendiente</a></article>
-      <article class="student"><div class="student-info"><div class="student-name">FELIX HERNANDEZ ALEXIA MARIA</div><div class="student-label">Página de pago</div></div><a class="pay-link disabled" href="#" aria-disabled="true">Enlace pendiente</a></article>
-       <article class="student"><div class="student-info"><div class="student-name">Dr. Jesus Miguel Garcia</div><div class="student-label">Página de pago</div></div><a class="pay-link disabled" href="pagoDrGarcia.html" aria-disabled="true">Enlace pendiente</a></article>
-    </section>
-    <div class="empty" id="empty">No se encontraron alumnos con ese nombre.</div>
-  </main>
+        <article class="student"><div class="student-info"><div
+              class="student-name">AQUINO RIVERA JOSE FRANCISCO</div><div
+              class="student-label">Página de pago</div></div><a
+            class="pay-link disabled" href="pagoAquino.html"
+            aria-disabled="true">Enlace
+            pendiente</a></article>
+        <article class="student"><div class="student-info"><div
+              class="student-name">Alvaro Arriaga</div><div
+              class="student-label">Página de pago</div></div><a
+            class="pay-link disabled" href="pagoAlvaro.html"
+            aria-disabled="true">Enlace
+            pendiente</a></article>
+        <article class="student"><div class="student-info"><div
+              class="student-name">ARVAYO COTA CRISTAL ALEJANDRA</div><div
+              class="student-label">Página de pago</div></div><a
+            class="pay-link disabled" href="pagoCristal.html"
+            aria-disabled="true">Enlace
+            pendiente</a></article>
+        <article class="student"><div class="student-info"><div
+              class="student-name">Yael Balandran</div><div
+              class="student-label">Página de pago</div></div><a
+            class="pay-link disabled" href="pagoBala.html"
+            aria-disabled="true">Enlace
+            pendiente</a></article>
+        <article class="student"><div class="student-info"><div
+              class="student-name">BUELNA ESPINOZA JOSE FERNANDO</div><div
+              class="student-label">Página de pago</div></div><a
+            class="pay-link disabled" href="pagoFernando.html"
+            aria-disabled="true">Enlace
+            pendiente</a></article>
+        <article class="student"><div class="student-info"><div
+              class="student-name">CORDOVA CISCOMANI DIEGO EMILIO</div><div
+              class="student-label">Página de pago</div></div><a
+            class="pay-link disabled" href="stalkear-gear.html"
+            aria-disabled="true">Enlace pendiente</a></article>
+        <article class="student"><div class="student-info"><div
+              class="student-name">GALVAN MOLINERO ARTURO DE JESUS</div><div
+              class="student-label">Página de pago</div></div><a
+            class="pay-link disabled" href="pagoArturo.html"
+            aria-disabled="true">Enlace
+            pendiente</a></article>
+        <article class="student"><div class="student-info"><div
+              class="student-name">GONZALEZ HOYOS ARTURO EDUARDO</div><div
+              class="student-label">Página de pago</div></div><a
+            class="pay-link disabled" href="zyron-store.html"
+            aria-disabled="true">Enlace pendiente</a></article>
+        <article class="student"><div class="student-info"><div
+              class="student-name">Fabian Juarez</div><div
+              class="student-label">Página de pago</div></div><a
+            class="pay-link disabled" href="pagoFabian.html"
+            aria-disabled="true">Enlace
+            pendiente</a></article>
+        <article class="student"><div class="student-info"><div
+              class="student-name">MORENO DURAZO JOSE MANUEL</div><div
+              class="student-label">Página de pago</div></div><a
+            class="pay-link disabled" href="pagoManuel.html"
+            aria-disabled="true">Enlace
+            pendiente</a></article>
+        <article class="student"><div class="student-info"><div
+              class="student-name">Guillermo Valencia</div><div
+              class="student-label">Página de pago</div></div><a
+            class="pay-link disabled" href="pagoMemo.html"
+            aria-disabled="true">Enlace
+            pendiente</a></article>
+        <article class="student"><div class="student-info"><div
+              class="student-name">FELIX HERNANDEZ ALEXIA MARIA</div><div
+              class="student-label">Página de pago</div></div><a
+            class="pay-link disabled" href="pagoAlexia.html"
+            aria-disabled="true">Enlace
+            pendiente</a></article>
+        <article class="student"><div class="student-info"><div
+              class="student-name">Dr. Jesus Miguel Garcia</div><div
+              class="student-label">Página de pago</div></div><a
+            class="pay-link disabled" href="pagoDrGarcia.html"
+            aria-disabled="true">Enlace pendiente</a></article>
+      </section>
+      <div class="empty" id="empty">No se encontraron alumnos con ese
+        nombre.</div>
+    </main>
 
-  <footer>Curso: Sistemas de Comercio Electrónico</footer>
+    <footer>Curso: Sistemas de Comercio Electrónico</footer>
 
-  <script>
+    <script>
     const search = document.getElementById('search');
     const cards = [...document.querySelectorAll('.student')];
     const count = document.getElementById('count');
@@ -169,5 +235,5 @@
       empty.style.display = visible ? 'none' : 'block';
     });
   </script>
-</body>
+  </body>
 </html>
