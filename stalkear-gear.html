@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Stalkear Gear</title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+            rel="stylesheet">
+        <style>
+            * {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+
+            body {
+                font-family: 'Plus Jakarta Sans', sans-serif;
+                background-color: #0b0f19;
+                color: #f8fafc;
+                min-height: 100vh;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                padding: 30px 16px;
+            }
+
+            .site-header {
+                margin-bottom: 30px;
+                text-align: center;
+            }
+
+            .site-header h1 {
+                font-size: 2.5rem;
+                font-weight: 700;
+                letter-spacing: -0.5px;
+                color: #ffffff;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                justify-content: center;
+            }
+
+            .site-header h1 span {
+                font-size: 2rem;
+            }
+
+            .product-container {
+                background: #111827;
+                border: 1px solid #1f2937;
+                border-radius: 24px;
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+                display: flex;
+                flex-direction: column;
+                max-width: 850px;
+                width: 100%;
+                overflow: hidden;
+                transition: transform 0.3s ease;
+            }
+
+            @media (min-width: 768px) {
+                .product-container {
+                    flex-direction: row;
+                }
+            }
+
+            .product-image-wrapper {
+                position: relative;
+                flex: 1;
+                background: #1f2937;
+                min-height: 280px;
+            }
+
+            .product-image-wrapper img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                display: block;
+            }
+
+            .badge {
+                position: absolute;
+                top: 16px;
+                left: 16px;
+                background: #f59e0b;
+                color: #0b0f19;
+                font-size: 0.75rem;
+                font-weight: 700;
+                padding: 6px 12px;
+                border-radius: 20px;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+            }
+
+            .product-info {
+                flex: 1;
+                padding: 32px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+
+            .category {
+                font-size: 0.85rem;
+                font-weight: 600;
+                color: #38bdf8;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                margin-bottom: 8px;
+            }
+
+            .product-info h2 {
+                font-size: 1.5rem;
+                color: #ffffff;
+                margin-bottom: 12px;
+                line-height: 1.3;
+            }
+
+            .description {
+                font-size: 0.92rem;
+                color: #94a3b8;
+                line-height: 1.6;
+                margin-bottom: 24px;
+            }
+
+            .price-box {
+                background: #1f2937;
+                padding: 16px 20px;
+                border-radius: 14px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-bottom: 24px;
+            }
+
+            .price-box .label {
+                font-size: 0.85rem;
+                color: #94a3b8;
+            }
+
+            .price-box .amount {
+                font-size: 1.6rem;
+                font-weight: 700;
+                color: #34d399;
+            }
+
+            .price-box .amount small {
+                font-size: 0.9rem;
+                color: #64748b;
+            }
+
+            .payment-section h3 {
+                font-size: 1rem;
+                color: #e2e8f0;
+                margin-bottom: 12px;
+                font-weight: 600;
+            }
+
+            #paypal-button-container {
+                width: 100%;
+                margin-top: 8px;
+            }
+
+            #result {
+                margin-top: 12px;
+                font-size: 0.9rem;
+                text-align: center;
+                font-weight: 500;
+            }
+        </style>
+    </head>
+    <body>
+        <header class="site-header">
+            <h1>Stalkear Gear <span>⛺</span></h1>
+        </header>
+        <main class="product-container">
+            <div class="product-image-wrapper">
+                <span class="badge">Más Vendido</span>
+                <img src="img/tiendaAcampar.jpg"
+                    alt="Tienda de campaña Coleman Sundome">
+            </div>
+            <div class="product-info">
+                <span class="category">Camping & Aventura</span>
+                <h2>Coleman Sundome - Tienda de campaña</h2>
+                <p class="description">
+                    Diseñada con sistema WeatherTec para resistir la intemperie.
+                    Montaje rápido en solo 10 minutos. Ideal para 2, 3, 4 o 6
+                    personas en tus excursiones, festivales y campamentos.
+                </p>
+                <div class="price-box">
+                    <span class="label">Precio especial</span>
+                    <span class="amount">$2,100 <small>MXN</small></span>
+                </div>
+                <div class="payment-section">
+                    <h3>Completar Orden</h3>
+                    <div id="paypal-button-container"></div>
+                    <p id="result"></p>
+                </div>
+            </div>
+        </main>
+        <script
+            src="https://www.paypal.com/sdk/js?client-id=BAAcUeYLH8CJ78wirlKYsvdZbkCMQ9J_cT0SDr1b-e84hgrUrfl8a2NIt-QV200ABBtuNkVaPukvghy8c8&currency=MXN&intent=capture"></script>
+        <script>
+            paypal.Buttons({
+                createOrder : (data, actions) => {
+                    return actions.order.create({
+                        purchase_units : [{
+                            description : "Descripcion",
+                            amount : {
+                                currency_code : "MXN",
+                                value : "2100.00"
+                            }
+                        }]
+                    });
+                },
+                onApprove : (data, actions) => {
+                    return actions.order.capture().then((details) => {
+                        document.getElementById("result").innerHTML = "¡Compra Realizada Exitosamente!<br>";
+                    });
+                },
+                onError : (error) => {
+                    console.error(error);
+                    document.getElementById("result").innerHTML = "¡Ocurrio Un Error Al Procesar El Pago!<br>";
+                }
+            }).render("#paypal-button-container");
+        </script>
+    </body>
+</html>
