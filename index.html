@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Directorio de pagos | Sistemas de Comercio Electrónico</title>
+  <style>
+    :root {
+      --navy: #12304a;
+      --blue: #1769aa;
+      --blue-light: #eaf3fb;
+      --ink: #203040;
+      --muted: #64748b;
+      --line: #e2e8f0;
+      --bg: #f4f7fb;
+      --white: #fff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+    }
+    header {
+      background: linear-gradient(120deg, #102b43, #1769aa);
+      color: white;
+      padding: 38px 20px 34px;
+    }
+    .header-inner, main { max-width: 1050px; margin: auto; }
+    .eyebrow {
+      margin: 0 0 10px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-size: 12px;
+      font-weight: 700;
+      opacity: .8;
+    }
+    h1 { margin: 0; font-size: clamp(25px, 4vw, 36px); }
+    .subtitle { margin: 12px 0 0; color: #e5eff8; line-height: 1.5; }
+    main { padding: 28px 20px 48px; }
+    .toolbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+    .count { color: var(--muted); font-size: 14px; }
+    .search {
+      width: min(100%, 340px);
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      border-radius: 9px;
+      font-size: 15px;
+      outline: none;
+      background: white;
+    }
+    .search:focus { border-color: var(--blue); box-shadow: 0 0 0 3px #1769aa20; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 14px;
+    }
+    .student {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      box-shadow: 0 3px 12px #18334d08;
+    }
+    .student-info { min-width: 0; }
+    .student-name { font-weight: 700; line-height: 1.35; overflow-wrap: anywhere; }
+    .student-label { color: var(--muted); font-size: 12px; margin-top: 5px; }
+    .pay-link {
+      flex-shrink: 0;
+      display: inline-block;
+      background: var(--blue);
+      color: white;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 10px 12px;
+      border-radius: 8px;
+      transition: background .2s;
+    }
+    .pay-link:hover { background: var(--navy); }
+    .pay-link.disabled { background: #e8eef4; color: #64748b; cursor: default; }
+    .empty {
+      display: none;
+      text-align: center;
+      padding: 35px;
+      color: var(--muted);
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+    }
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 12px;
+      padding: 0 20px 28px;
+    }
+    @media (max-width: 480px) {
+      .student { align-items: flex-start; flex-direction: column; }
+      .pay-link { width: 100%; text-align: center; }
+      .search { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <p class="eyebrow">Universidad de la Sierra · Ingeniería en Sistemas Computacionales</p>
+      <h1>Directorio de páginas de pago</h1>
+      <p class="subtitle">Sistemas de Comercio Electrónico<br>Selecciona tu nombre para acceder a tu página de pago.</p>
+    </div>
+  </header>
+
+  <main>
+    <div class="toolbar">
+      <div class="count" id="count">12 alumnos</div>
+      <input class="search" id="search" type="search" placeholder="Buscar alumno..." aria-label="Buscar alumno">
+    </div>
+    <section class="grid" id="students" aria-label="Alumnos">
+      <!--
+        Para agregar cada URL, reemplaza href="#" por la dirección completa.
+        Ejemplo: href="https://mi-tienda.vercel.app/pagos"
+      -->
+      <article class="student"><div class="student-info"><div class="student-name">AQUINO RIVERA JOSE FRANCISCO</div><div class="student-label">Página de pago</div></div><a class="pay-link disabled" href="#" aria-disabled="true">Enlace pendiente</a></article>
+      <article class="student"><div class="student-info"><div class="student-name">Alvaro Arriaga</div><div class="student-label">Página de pago</div></div><a class="pay-link disabled" href="#" aria-disabled="true">Enlace pendiente</a></article>
+      <article class="student"><div class="student-info"><div class="student-name">ARVAYO COTA CRISTAL ALEJANDRA</div><div class="student-label">Página de pago</div></div><a class="pay-link disabled" href="#" aria-disabled="true">Enlace pendiente</a></article>
+      <article class="student"><div class="student-info"><div class="student-name">Yael Balandran</div><div class="student-label">Página de pago</div></div><a class="pay-link disabled" href="#" aria-disabled="true">Enlace pendiente</a></article>
+      <article class="student"><div class="student-info"><div class="student-name">BUELNA ESPINOZA JOSE FERNANDO</div><div class="student-label">Página de pago</div></div><a class="pay-link disabled" href="#" aria-disabled="true">Enlace pendiente</a></article>
+      <article class="student"><div class="student-info"><div class="student-name">CORDOVA CISCOMANI DIEGO EMILIO</div><div class="student-label">Página de pago</div></div><a class="pay-link disabled" href="#" aria-disabled="true">Enlace pendiente</a></article>
+      <article class="student"><div class="student-info"><div class="student-name">GALVAN MOLINERO ARTURO DE JESUS</div><div class="student-label">Página de pago</div></div><a class="pay-link disabled" href="#" aria-disabled="true">Enlace pendiente</a></article>
+      <article class="student"><div class="student-info"><div class="student-name">GONZALEZ HOYOS ARTURO EDUARDO</div><div class="student-label">Página de pago</div></div><a class="pay-link disabled" href="#" aria-disabled="true">Enlace pendiente</a></article>
+      <article class="student"><div class="student-info"><div class="student-name">Fabian Juarez</div><div class="student-label">Página de pago</div></div><a class="pay-link disabled" href="#" aria-disabled="true">Enlace pendiente</a></article>
+      <article class="student"><div class="student-info"><div class="student-name">MORENO DURAZO JOSE MANUEL</div><div class="student-label">Página de pago</div></div><a class="pay-link disabled" href="#" aria-disabled="true">Enlace pendiente</a></article>
+      <article class="student"><div class="student-info"><div class="student-name">Guillermo Valencia</div><div class="student-label">Página de pago</div></div><a class="pay-link disabled" href="#" aria-disabled="true">Enlace pendiente</a></article>
+      <article class="student"><div class="student-info"><div class="student-name">FELIX HERNANDEZ ALEXIA MARIA</div><div class="student-label">Página de pago</div></div><a class="pay-link disabled" href="#" aria-disabled="true">Enlace pendiente</a></article>
+    </section>
+    <div class="empty" id="empty">No se encontraron alumnos con ese nombre.</div>
+  </main>
+
+  <footer>Curso: Sistemas de Comercio Electrónico</footer>
+
+  <script>
+    const search = document.getElementById('search');
+    const cards = [...document.querySelectorAll('.student')];
+    const count = document.getElementById('count');
+    const empty = document.getElementById('empty');
+
+    search.addEventListener('input', () => {
+      const term = search.value.trim().toLocaleLowerCase('es');
+      let visible = 0;
+      cards.forEach(card => {
+        const match = card.querySelector('.student-name').textContent.toLocaleLowerCase('es').includes(term);
+        card.hidden = !match;
+        if (match) visible++;
+      });
+      count.textContent = `${visible} de ${cards.length} alumnos`;
+      empty.style.display = visible ? 'none' : 'block';
+    });
+  </script>
+</body>
+</html>
