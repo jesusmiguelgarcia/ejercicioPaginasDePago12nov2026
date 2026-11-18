@@ -1,1 +1,49 @@
-<h1>Página de pago de Zyron Store</h1>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rastro Salvaje</title>
+<style>
+  :root {
+  --negro: #0a0a0a;
+  --rojo: #e10600;
+  --fondo: #161616;
+  --texto: #0a0a0a;
+}
+* { box-sizing: border-box; }
+body { margin: 0; min-height: 100vh; background: var(--fondo); font-family: Arial, Helvetica, sans-serif; color: var(--texto); }
+header { background: var(--negro); border-bottom: 3px solid var(--rojo); padding: 22px 16px; text-align: center; }
+header h1 { margin: 0; color: #fff; font-size: 30px; }
+.tarjeta { max-width: 400px; margin: 30px auto; background: #fff; border-radius: 12px; padding: 24px 25px 30px; text-align: center; }
+.tarjeta img { width: 100%; max-width: 300px; height: 280px; object-fit: contain; }
+.nombre { font-size: 18px; font-weight: bold; margin: 30px 0 22px; }
+.precio { font-size: 25px; font-weight: bold; color: var(--rojo); margin: 0 0 22px; }
+.pago-titulo { font-size: 18px; font-weight: bold; margin: 0 0 18px; }
+#btn-pagar { width: 100%; height: 45px; border-radius: 4px; font-size: 15px; font-weight: bold; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 8px; background: var(--negro); color: #fff; border: 2px solid var(--rojo); }
+#btn-pagar:hover { background: var(--rojo); }
+.pie { margin-top: 14px; font-size: 11px; color: #555; font-style: italic; }
+.pie b { color: var(--negro); font-size: 14px; }
+</style>
+</head>
+<body>
+  <header><h1>Zyron Store</h1></header>
+
+  <main class="tarjeta">
+    <!-- Pon aquí tu imagen del producto (guárdala en /public como portada.jpg) -->
+    <img src="https://tse2.mm.bing.net/th/id/OIP.z-yevS6JWwh9k-zHqV5fsgAAAA?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Grand Theft Auto VI">
+    <p class="nombre">Grand Theft Auto VI</p>
+    <p class="precio">$1,499 MXN</p>
+    <p class="pago-titulo">Realizar pago</p>
+
+    <!-- Pega aquí tu Payment Link de Stripe (https://buy.stripe.com/...) -->
+    <a id="btn-pagar" href="https://buy.stripe.com/test_9B6eVd4me9SZ5wV2YJ2B200">
+      <span class="icono-tarjeta" aria-hidden="true"></span>
+      Tarjeta de débito o crédito
+    </a>
+    <p class="pie">Desarrollado por <b>stripe</b></p>
+  </main>
+
+
+</body>
+</html>
